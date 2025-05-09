@@ -36,9 +36,56 @@ Here is the dataset from kaggle
 
 ## Business Problems and Solutions
 
-### TOTAL NUMBER OF CONTENT
+### 1. TOTAL NUMBER OF CONTENT
 ```javascript
 SELECT
 COUNT(*) AS TOTAL_CONTENT
 FROM NETFLIX_TITLES;
+```
+
+### 2. HOW MANY TYPE OF CONTENT PRESENT HERE 
+```javascript
+SELECT 
+DISTINCT TYPE
+FROM NETFLIX_TITLES;
+```
+
+### 3. Count the number of Movies vs TV Shows
+```javascript
+SELECT
+TYPE,
+COUNT(*) AS TOTAL_CONTENT
+FROM NETFLIX_TITLES
+GROUP BY TYPE;
+```
+
+### 4. Find the most common rating for movies and TV shows
+```javascript
+SELECT 
+TYPE,
+RATING
+FROM
+(
+	SELECT 
+	TYPE,
+	RATING,
+	COUNT(*) AS TOTAL_CONTENT,
+	RANK() OVER(PARTITION BY TYPE ORDER BY COUNT(*) DESC) AS RANKING
+	FROM NETFLIX_TITLES
+	GROUP BY TYPE,RATING
+) AS T1
+WHERE RANKING = 1;
+```
+
+### 5. List all movies released in a specific year (e.g., 2020)
+```javascript
+--FILTER 2020
+--FILTER MOVIES
+SELECT  * FROM NETFLIX_TITLES
+WHERE TYPE = 'MOVIE' AND RELEASE_YEAR = 2020;
+```
+
+
+```javascript
+
 ```
