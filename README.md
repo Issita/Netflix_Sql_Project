@@ -27,7 +27,7 @@ This project not only sharpened my SQL skills but also gave me the chance to thi
 
 ## Dataset
 Here is the dataset from kaggle 
--[Netflix_dataset_link] (#https://github.com/Issita/Netflix_Sql_Project/blob/main/netflix_titles.csv)
+[Netflix_dataset_link] (https://github.com/Issita/Netflix_Sql_Project/blob/main/netflix_titles.csv)
 
 ## Technologies Used
 - SQL Server Management Studio (SSMS)
@@ -37,4 +37,9 @@ Here is the dataset from kaggle
 ## Business Problems and Solutions
 
 ### TOTAL NUMBER OF CONTENT
+'''javascript
+SELECT
+COUNT(*) AS TOTAL_CONTENT
+FROM NETFLIX_TITLES;
 
+'''
