@@ -30,6 +30,6 @@ Here is the dataset from kaggle
 Netflix_dataset_link (https://github.com/Issita/Netflix_Sql_Project/blob/main/netflix_titles.csv)
 
 ## Technologies Used
-SQL Server Management Studio (SSMS)
-SQL Queries: JOINs, GROUP BY, CROSS APPLY, STRING_SPLIT, XML, DATE functions
-Data cleaning and transformation logic
+- SQL Server Management Studio (SSMS)
+- SQL Queries: JOINs, GROUP BY, CROSS APPLY, STRING_SPLIT, XML, DATE functions
+- Data cleaning and transformation logic
