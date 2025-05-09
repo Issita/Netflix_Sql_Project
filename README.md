@@ -24,3 +24,6 @@ Here’s what I set out to explore:
 - India Spotlight: Zoom in on Indian content trends over the years — and find out which years were most productive!
 
 This project not only sharpened my SQL skills but also gave me the chance to think like a data storyteller — turning numbers into answers, and answers into insight
+
+## Dataset
+Here is the dataset from kaggle [Netflix_dataset] ()
