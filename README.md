@@ -33,3 +33,10 @@ Netflix_dataset_link (https://github.com/Issita/Netflix_Sql_Project/blob/main/ne
 - SQL Server Management Studio (SSMS)
 - SQL Queries: JOINs, GROUP BY, CROSS APPLY, STRING_SPLIT, XML, DATE functions
 - Data cleaning and transformation logic
+
+## Business Problems and Solutions
+
+### TOTAL NUMBER OF CONTENT
+SELECT
+COUNT(*) AS TOTAL_CONTENT
+FROM NETFLIX_TITLES;
