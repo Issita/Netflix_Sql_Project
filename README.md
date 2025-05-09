@@ -37,9 +37,8 @@ Here is the dataset from kaggle
 ## Business Problems and Solutions
 
 ### TOTAL NUMBER OF CONTENT
-'''javascript
+```javascript
 SELECT
 COUNT(*) AS TOTAL_CONTENT
 FROM NETFLIX_TITLES;
-
-'''
+```
