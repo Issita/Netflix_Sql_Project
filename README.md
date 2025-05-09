@@ -26,4 +26,5 @@ Here’s what I set out to explore:
 This project not only sharpened my SQL skills but also gave me the chance to think like a data storyteller — turning numbers into answers, and answers into insight
 
 ## Dataset
-Here is the dataset from kaggle [Netflix_dataset] ()
+Here is the dataset from kaggle 
+![Netflix_dataset_link] (https://github.com/Issita/Netflix_Sql_Project/blob/main/netflix_titles.csv)
