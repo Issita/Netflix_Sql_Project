@@ -37,21 +37,21 @@ Here is the dataset from kaggle
 ## Business Problems and Solutions
 
 ### 1. TOTAL NUMBER OF CONTENT
-```javascript
+```sql
 SELECT
 COUNT(*) AS TOTAL_CONTENT
 FROM NETFLIX_TITLES;
 ```
 
 ### 2. HOW MANY TYPE OF CONTENT PRESENT HERE 
-```javascript
+```sql
 SELECT 
 DISTINCT TYPE
 FROM NETFLIX_TITLES;
 ```
 
 ### 3. Count the number of Movies vs TV Shows
-```javascript
+```sql
 SELECT
 TYPE,
 COUNT(*) AS TOTAL_CONTENT
@@ -60,7 +60,7 @@ GROUP BY TYPE;
 ```
 
 ### 4. Find the most common rating for movies and TV shows
-```javascript
+```sql
 SELECT 
 TYPE,
 RATING
@@ -78,7 +78,7 @@ WHERE RANKING = 1;
 ```
 
 ### 5. List all movies released in a specific year (e.g., 2020)
-```javascript
+```sql
 --FILTER 2020
 --FILTER MOVIES
 SELECT  * FROM NETFLIX_TITLES
@@ -86,7 +86,7 @@ WHERE TYPE = 'MOVIE' AND RELEASE_YEAR = 2020;
 ```
 
 ### 6. Find the top 5 countries with the most content on Netflix
-```javascript
+```sql
 SELECT TOP 5 
 TRIM(value) AS country,
 COUNT(*) AS total_content
@@ -98,14 +98,14 @@ ORDER BY total_content DESC;
 ```
 
 ### 7. Identify the longest movie
-```javascript
+```sql
 SELECT * FROM NETFLIX_TITLES
 WHERE TYPE = 'MOVIE' AND 
 	DURATION = (SELECT MAX(DURATION) FROM NETFLIX_TITLES);
 ```
 
 ### 8. Find content added in the last 5 years
-```javascript
+```sql
 SELECT * FROM NETFLIX_TITLES
 WHERE DATE_ADDED >= DATEADD(YEAR,-5,GETDATE());
 
@@ -123,13 +123,13 @@ WHERE CAST(date_added AS DATE) >= DATEADD(YEAR, -5, GETDATE());
 ```
 
 ### 9. Find all the movies/TV shows by director 'Rajiv Chilaka'!
-```javascript
+```sql
 SELECT * FROM NETFLIX_TITLES
 WHERE LOWER(DIRECTOR) LIKE '%Rajiv Chilaka%';
 ```
 
 ### 10. List all TV shows with more than 5 seasons
-```javascript
+```sql
 
 SELECT *,
 SUBSTRING(DURATION,1,CHARINDEX(' ',DURATION)-1) AS SEASONS
@@ -150,7 +150,7 @@ WHERE TYPE= 'TV Show'
 
 
 ### 11. Count the number of content items in each genre
-```javascript
+```sql
 SELECT 
 TRIM(VALUE)AS GENER,
 COUNT(SHOW_ID) AS TOTAL_CONTENT
@@ -161,7 +161,7 @@ ORDER BY TOTAL_CONTENT DESC;
 ```
 
 ### 12. Find each year and the average numbers of content release in India on netflix. return top 5 year with highest avg content release!
-```javascript
+```sql
 SELECT 
 	COUNTRY,
 	YEAR (DATE_ADDED) AS YEAR,
@@ -177,26 +177,26 @@ OFFSET 0 ROWS FETCH NEXT 5 ROWS ONLY;
 ```
 
 ### 13. List all movies that are documentaries
-```javascript
+```sql
 SELECT * FROM NETFLIX_TITLES
 WHERE LOWER(LISTED_IN) LIKE '%documentaries%';
 ```
 
 ### 14. Find all content without a director
-```javascript
+```sql
 SELECT * FROM NETFLIX_TITLES
 WHERE director IS NULL;
 ```
 
 ### 15. Find how many movies actor 'Salman Khan' appeared in last 10 years!
-```javascript
+```sql
 SELECT * FROM NETFLIX_TITLES
 WHERE LOWER(casts) LIKE '%Salman Khan%'
 	AND RELEASE_YEAR > YEAR(GETDATE()) - 10;
 ```
 
 ### 16. Find the top 10 actors who have appeared in the highest number of movies produced in India.
-```javascript
+```sql
 SELECT
 --SHOW_ID,
 --CASTS,
@@ -211,7 +211,7 @@ OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;
 ```
 
 ### 17.Categorize the content based on the presence of the keywords 'kill' and 'violence' in the description field. Label content containing these keywords as 'Bad' and all other content as 'Good'. Count how many items fall into each category.
-```javascript
+```sql
 SELECT
 CATEGORY,
 COUNT(*) AS TOTAL_CONTENT
